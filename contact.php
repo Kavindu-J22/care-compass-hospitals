@@ -46,17 +46,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="contact">
-        <h1>Contact Us</h1>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Contact Us</h1>
+            <p>We’re here to help! Reach out to us for any questions, concerns, or feedback. Our team is ready to assist you.</p>
+        </div>
+        <div class="contact-hero-image">
+            <img src="assets/images/contact-hero.jpg" alt="Care Compass Hospitals Contact">
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form">
+        <h2>Have a Question?</h2>
+        <p>Fill out the form below, and we’ll get back to you as soon as possible.</p>
         <form method="POST" action="">
             <textarea name="query" placeholder="Enter your query" required></textarea>
-            <button type="submit">Submit Query</button>
+            <button type="submit" class="submit-btn">Submit Query</button>
         </form>
     </section>
 
+    <!-- Contact Information Section -->
+    <section class="contact-info">
+        <h2>Our Contact Information</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <img src="assets/images/location-icon.png" alt="Location Icon">
+                <h3>Location</h3>
+                <p>123 Hospital Road, Colombo, Sri Lanka</p>
+            </div>
+            <div class="info-card">
+                <img src="assets/images/phone-icon.png" alt="Phone Icon">
+                <h3>Phone</h3>
+                <p>+94 11 123 4567</p>
+            </div>
+            <div class="info-card">
+                <img src="assets/images/email-icon.png" alt="Email Icon">
+                <h3>Email</h3>
+                <p>info@carecompass.lk</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

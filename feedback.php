@@ -48,18 +48,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/feedback.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="feedback">
-        <h1>Feedback</h1>
+
+    <!-- Feedback Hero Section -->
+    <section class="feedback-hero">
+        <div class="feedback-hero-content">
+            <h1>We Value Your Feedback</h1>
+            <p>Your feedback helps us improve our services and provide better care. Share your experience with us!</p>
+        </div>
+        <div class="feedback-hero-image">
+            <img src="assets/images/feedback-hero.jpg" alt="Care Compass Hospitals Feedback">
+        </div>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section class="feedback-form">
+        <h2>Share Your Experience</h2>
+        <p>Please take a moment to rate your experience and provide any comments or suggestions.</p>
         <form method="POST" action="">
-            <input type="number" name="rating" min="1" max="5" placeholder="Rating (1-5)" required>
-            <textarea name="comment" placeholder="Your feedback" required></textarea>
-            <button type="submit">Submit Feedback</button>
+            <div class="rating-input">
+                <label for="rating">Rating (1-5):</label>
+                <input type="number" name="rating" id="rating" min="1" max="5" placeholder="Enter rating (1-5)" required>
+            </div>
+            <div class="comment-input">
+                <label for="comment">Your Feedback:</label>
+                <textarea name="comment" id="comment" placeholder="Enter your feedback" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit Feedback</button>
         </form>
     </section>
 
+    <!-- Footer -->
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

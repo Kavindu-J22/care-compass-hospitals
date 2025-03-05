@@ -1,0 +1,115 @@
+/* Feedback Hero Section */
+.feedback-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 40px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    margin-top: 10px;
+}
+
+.feedback-hero-content {
+    max-width: 50%;
+}
+
+.feedback-hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.feedback-hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #eee;
+}
+
+.feedback-hero-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Feedback Form Section */
+.feedback-form {
+    padding: 80px 40px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.feedback-form h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.feedback-form p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    color: #666;
+}
+
+.feedback-form form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.feedback-form .rating-input,
+.feedback-form .comment-input {
+    margin-bottom: 20px;
+}
+
+.feedback-form label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feedback-form input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.feedback-form input[type="number"]:focus {
+    border-color: #6a11cb;
+}
+
+.feedback-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+    min-height: 150px;
+}
+
+.feedback-form textarea:focus {
+    border-color: #6a11cb;
+}
+
+.feedback-form .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.feedback-form .submit-btn:hover {
+    background: #2575fc;
+}
