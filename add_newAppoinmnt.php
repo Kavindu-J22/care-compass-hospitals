@@ -82,14 +82,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Appointment - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/addAppoinment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="add-appointment">
-        <h1>Add Appointment</h1>
+    <!-- Header -->
+    <?php include 'includes/header.php'; ?>
+
+    <!-- Add Appointment Hero Section -->
+    <section class="add-appointment-hero">
+        <div class="add-appointment-hero-content">
+            <h1>Book an Appointment</h1>
+            <p>Schedule your visit with our expert doctors and healthcare professionals. We’re here to provide you with the best care.</p>
+        </div>
+        <div class="add-appointment-hero-image">
+            <img src="assets/images/appointment-hero.jpg" alt="Care Compass Hospitals Appointment">
+        </div>
+    </section>
+
+    <!-- Add Appointment Form Section -->
+    <section class="add-appointment-form">
+        <h2>Add New Appointment</h2>
+        <p>Fill out the form below to book your appointment.</p>
         <form method="POST" action="">
-            <div>
-                <label for="doctor_id">Select Doctor:</label>
+            <div class="form-group">
+                <label for="doctor_id">Select Doctor or Staff:</label>
                 <select name="doctor_id" id="doctor_id" required>
                     <option value="">-- Select Doctor --</option>
                     <?php foreach ($doctors as $doctor): ?>
@@ -97,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <?php endforeach; ?>
                 </select>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="service_id">Select Service:</label>
                 <select name="service_id" id="service_id" required>
                     <option value="">-- Select Service --</option>
@@ -106,15 +123,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <?php endforeach; ?>
                 </select>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="appointment_date">Appointment Date:</label>
                 <input type="datetime-local" name="appointment_date" id="appointment_date" required>
             </div>
-            <button type="submit">Book Appointment</button>
+            <button type="submit" class="btn-primary">Book Appointment</button>
         </form>
-        <a href="dashboard.php" class="btn">Back to Dashboard</a>
+        <a href="dashboard.php" class="btn-secondary">Back to Dashboard</a>
     </section>
 
+    <!-- Footer -->
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

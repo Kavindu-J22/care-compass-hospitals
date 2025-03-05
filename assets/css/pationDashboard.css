@@ -1,0 +1,116 @@
+/* Dashboard Hero Section */
+.dashboard-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 40px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    margin-top: 10px;
+}
+
+.dashboard-hero-content {
+    max-width: 50%;
+}
+
+.dashboard-hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.dashboard-hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #eee;
+}
+
+.dashboard-hero-image img {
+    max-width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Dashboard Content Section */
+.dashboard-content {
+    padding: 80px 40px;
+    background: #f9f9f9;
+}
+
+.dashboard-section {
+    margin-bottom: 60px;
+}
+
+.dashboard-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #6a11cb;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+    background: #2575fc;
+}
+
+/* Appointments Grid */
+.appointment-grid,
+.query-grid,
+.feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.appointment-card,
+.query-card,
+.feedback-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.appointment-card:hover,
+.query-card:hover,
+.feedback-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.appointment-card h3,
+.query-card h3,
+.feedback-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.appointment-card p,
+.query-card p,
+.feedback-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.status-pending {
+    color: #ff9800;
+}
+
+status-completed {
+    color: #4caf50;
+}
+
+.status-cancelled {
+    color: #f44336;
+}

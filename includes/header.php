@@ -28,8 +28,8 @@
                     <li><a href="contact.php">Contact & Send Query</a></li>
                     <li><a href="feedback.php">Feedback</a></li>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <li><a href="dashboard.php">Dashboard</a></li>
-                        <li><a href="logout.php">Logout</a></li>
+                        <li><a href="dashboard.php">Dashboard  🔔</a></li>
+                        <li><a href="logout.php">Logout 👤</a></li>
                     <?php endif; ?>
                 </ul>
             </nav>
