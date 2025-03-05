@@ -30,6 +30,40 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Search Form */
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-form input {
+    width: 70%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    background: #6a11cb;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-form button:hover {
+    background: #2575fc;
+}
+
+.search-form button i {
+    font-size: 16px;
+}
+
 /* Services List Section */
 .services-list {
     padding: 80px 40px;
