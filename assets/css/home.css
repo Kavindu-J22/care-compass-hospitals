@@ -1,0 +1,176 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+.hero, .features, .about-us p {
+    font-size: 16px;
+    color: #666;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 40px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    margin-top: 10px;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #eee;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+    background: #fff;
+    color: #6a11cb;
+    margin-right: 15px;
+}
+
+.hero-buttons .btn-primary:hover {
+    background: #f0f0f0;
+}
+
+.hero-buttons .btn-secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.hero-buttons .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-image img {
+    max-width: 90%;
+    border-radius: 15px;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 40px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.features p {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+
+.feature-card img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* About Us Section */
+.about-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 40px;
+    background: #fff;
+}
+
+.about-content {
+    max-width: 50%;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.about-content .btn-primary {
+    padding: 12px 24px;
+    background: #6a11cb;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.about-content .btn-primary:hover {
+    background: #2575fc;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
