@@ -58,31 +58,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resolve Query - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/resolveQuery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="resolve-query">
-        <h1>Resolve Query</h1>
+
+    <!-- Resolve Query Hero Section -->
+    <section class="resolve-query-hero">
+        <div class="resolve-query-hero-content">
+            <h1>Resolve Query</h1>
+            <p>Provide a response and update the status of patient queries to ensure timely and effective communication.</p>
+        </div>
+    </section>
+
+    <!-- Resolve Query Form Section -->
+    <section class="resolve-query-form">
+        <h2>Query Details</h2>
+        <p>Review the query and provide a response to resolve the issue.</p>
+
         <form method="post">
-            <label for="patient_name">Patient Name:</label>
-            <input type="text" id="patient_name" value="<?php echo htmlspecialchars($query['full_name']); ?>" disabled>
-
-            <label for="query_text">Query:</label>
-            <textarea id="query_text" disabled><?php echo htmlspecialchars($query['query']); ?></textarea>
-
-            <label for="response">Response:</label>
-            <textarea id="response" name="response" required><?php echo htmlspecialchars($query['response']); ?></textarea>
-
-            <label for="status">Status:</label>
-            <select id="status" name="status" required>
-                <option value="pending" <?php echo ($query['status'] === 'pending') ? 'selected' : ''; ?>>Pending</option>
-                <option value="resolved" <?php echo ($query['status'] === 'resolved') ? 'selected' : ''; ?>>Resolved</option>
-            </select>
-
-            <button type="submit">Update</button>
+            <div class="form-group">
+                <label for="patient_name">Patient Name:</label>
+                <input type="text" id="patient_name" value="<?php echo htmlspecialchars($query['full_name']); ?>" disabled>
+            </div>
+            <div class="form-group">
+                <label for="query_text">Query:</label>
+                <textarea id="query_text" disabled><?php echo htmlspecialchars($query['query']); ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="response">Response:</label>
+                <textarea id="response" name="response" required><?php echo htmlspecialchars($query['response']); ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="pending" <?php echo ($query['status'] === 'pending') ? 'selected' : ''; ?>>Pending</option>
+                    <option value="resolved" <?php echo ($query['status'] === 'resolved') ? 'selected' : ''; ?>>Resolved</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-primary">Update</button>
         </form>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
 </body>
 </html>

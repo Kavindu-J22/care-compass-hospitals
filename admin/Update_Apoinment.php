@@ -59,30 +59,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Appointment</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Update Appointment - Care Compass Hospitals</title>
+    <link rel="stylesheet" href="../assets/css/updateAppoinment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="dashboard">
-        <h1>Update Appointment</h1>
-        <form method="POST">
-            <label>Appointment Number:</label>
-            <input type="text" name="appointment_number" value="<?php echo htmlspecialchars($appointment['appointment_number']); ?>" required>
-            
-            <label>Appointment Date:</label>
-            <input type="datetime-local" name="appointment_date" value="<?php echo date('Y-m-d\TH:i', strtotime($appointment['appointment_date'])); ?>" required>
 
-            <label>Status:</label>
-            <select name="status">
-                <option value="pending" <?php echo ($appointment['status'] == 'pending') ? 'selected' : ''; ?>>Pending</option>
-                <option value="completed" <?php echo ($appointment['status'] == 'completed') ? 'selected' : ''; ?>>Completed</option>
-                <option value="cancelled" <?php echo ($appointment['status'] == 'cancelled') ? 'selected' : ''; ?>>Cancelled</option>
-            </select>
 
-            <button type="submit" class="btn">Update</button>
-        </form>
+    <!-- Update Appointment Hero Section -->
+    <section class="update-appointment-hero">
+        <div class="update-appointment-hero-content">
+            <h1>Update Appointment</h1>
+            <p>Modify appointment details to ensure accurate scheduling and patient satisfaction.</p>
+        </div>
     </section>
+
+    <!-- Update Appointment Form Section -->
+    <section class="update-appointment-form">
+        <h2>Edit Appointment Details</h2>
+        <p>Update the appointment information below and save the changes.</p>
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="appointment_number">Appointment Number:</label>
+                <input type="text" name="appointment_number" id="appointment_number" value="<?php echo htmlspecialchars($appointment['appointment_number']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment_date">Appointment Date:</label>
+                <input type="datetime-local" name="appointment_date" id="appointment_date" value="<?php echo date('Y-m-d\TH:i', strtotime($appointment['appointment_date'])); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select name="status" id="status" required>
+                    <option value="pending" <?php echo ($appointment['status'] == 'pending') ? 'selected' : ''; ?>>Pending</option>
+                    <option value="completed" <?php echo ($appointment['status'] == 'completed') ? 'selected' : ''; ?>>Completed</option>
+                    <option value="cancelled" <?php echo ($appointment['status'] == 'cancelled') ? 'selected' : ''; ?>>Cancelled</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-primary">Update Appointment</button>
+        </form>
+        <a href="manage_Appointments.php" class="btn-secondary">Back to Manage Appointments</a>
+    </section>
+
 </body>
 </html>
-
-<?php include '../includes/footer.php'; ?>

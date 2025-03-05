@@ -37,19 +37,34 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Doctor - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Delete Doctor & Staff - Care Compass Hospitals</title>
+    <link rel="stylesheet" href="../assets/css/deleteStaff.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="delete-doctor">
-        <h1>Delete Doctor</h1>
-        <p>Are you sure you want to delete this doctor?</p>
+
+
+    <!-- Delete Doctor & Staff Hero Section -->
+    <section class="delete-doctor-hero">
+        <div class="delete-doctor-hero-content">
+            <h1>Delete Doctor & Staff</h1>
+            <p>Remove a doctor or staff member from the Care Compass Hospitals system. Please confirm your action.</p>
+        </div>
+    </section>
+
+    <!-- Delete Confirmation Section -->
+    <section class="delete-confirmation">
+        <h2>Are you sure you want to delete this doctor or staff member?</h2>
+        <p>This action cannot be undone. Please confirm your decision.</p>
+
+        <?php if (isset($error)) { echo "<p class='error'>$error</p>"; } ?>
+        <?php if (isset($success)) { echo "<p class='success'>$success</p>"; } ?>
+
         <form method="POST" action="">
-            <button type="submit" name="confirm" value="yes">Yes, Delete</button>
-            <a href="manage_doctors.php" class="btn">No, Go Back</a>
+            <button type="submit" name="confirm" value="yes" class="btn-delete">Yes, Delete</button>
+            <a href="manage_doctors.php" class="btn-secondary">No, Go Back</a>
         </form>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
 </body>
 </html>

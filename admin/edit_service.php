@@ -68,29 +68,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Service - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/editServices.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="edit-service">
-        <h1>Edit Service</h1>
+
+
+    <!-- Edit Service Hero Section -->
+    <section class="edit-service-hero">
+        <div class="edit-service-hero-content">
+            <h1>Edit Service</h1>
+            <p>Update the details of healthcare services to ensure accurate and up-to-date information for patients.</p>
+        </div>
+    </section>
+
+    <!-- Edit Service Form Section -->
+    <section class="edit-service-form">
+        <h2>Edit Service Details</h2>
+        <p>Update the information for the selected service.</p>
+
+        <?php if (isset($error)) { echo "<p class='error'>$error</p>"; } ?>
+        <?php if (isset($success)) { echo "<p class='success'>$success</p>"; } ?>
+
         <form method="POST" action="">
-            <div>
-                <label for="name">Name:</label>
+            <div class="form-group">
+                <label for="name">Service Name:</label>
                 <input type="text" name="name" id="name" value="<?php echo $service['name']; ?>" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="description">Description:</label>
                 <textarea name="description" id="description" required><?php echo $service['description']; ?></textarea>
             </div>
-            <div>
-                <label for="cost">Cost:</label>
+            <div class="form-group">
+                <label for="cost">Cost (LKR):</label>
                 <input type="number" name="cost" id="cost" value="<?php echo $service['cost']; ?>" required>
             </div>
-            <button type="submit">Update Service</button>
+            <button type="submit" class="btn-primary">Update Service</button>
         </form>
-        <a href="manage_services.php" class="btn">Back to Manage Services</a>
+        <a href="manage_services.php" class="btn-secondary">Back to Manage Services</a>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
 </body>
 </html>

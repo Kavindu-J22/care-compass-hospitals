@@ -1,0 +1,143 @@
+/* Edit Patient Hero Section */
+.edit-patient-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+}
+
+.edit-patient-hero-content {
+    max-width: 50%;
+}
+
+.edit-patient-hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.edit-patient-hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #eee;
+}
+
+.edit-patient-hero-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Edit Patient Form Section */
+.edit-patient-form {
+    padding: 80px 40px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.edit-patient-form h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.edit-patient-form p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    color: #666;
+}
+
+.edit-patient-form form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #6a11cb;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background: #2575fc;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid #6a11cb;
+    color: #6a11cb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: #6a11cb;
+    color: #fff;
+}
+
+.message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+}

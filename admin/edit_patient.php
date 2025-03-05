@@ -55,28 +55,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Patient - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/editPateint.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="edit-patient">
-        <h1>Edit Patient</h1>
-        <form method="POST">
-            <label>Full Name:</label>
-            <input type="text" name="full_name" value="<?= htmlspecialchars($patient['full_name']) ?>" required>
 
-            <label>Email:</label>
-            <input type="email" name="email" value="<?= htmlspecialchars($patient['email']) ?>" required>
-
-            <label>Phone:</label>
-            <input type="text" name="phone" value="<?= htmlspecialchars($patient['phone']) ?>" required>
-
-            <label>Address:</label>
-            <textarea name="address" required><?= htmlspecialchars($patient['address']) ?></textarea>
-
-            <button type="submit">Update</button>
-        </form>
+    <!-- Edit Patient Hero Section -->
+    <section class="edit-patient-hero">
+        <div class="edit-patient-hero-content">
+            <h1>Edit Patient</h1>
+            <p>Update patient details to ensure accurate and up-to-date information for better healthcare delivery.</p>
+        </div>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
+    <!-- Edit Patient Form Section -->
+    <section class="edit-patient-form">
+        <h2>Update Patient Details</h2>
+        <p>Edit the patient's information below and save the changes.</p>
+
+        <?php if (isset($_SESSION['message'])) { echo "<p class='message'>{$_SESSION['message']}</p>"; unset($_SESSION['message']); } ?>
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="full_name">Full Name:</label>
+                <input type="text" name="full_name" id="full_name" value="<?= htmlspecialchars($patient['full_name']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" value="<?= htmlspecialchars($patient['email']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" name="phone" id="phone" value="<?= htmlspecialchars($patient['phone']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea name="address" id="address" required><?= htmlspecialchars($patient['address']) ?></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Update</button>
+        </form>
+        <a href="manage_patients.php" class="btn-secondary">Back to Manage Patients</a>
+    </section>
+
 </body>
 </html>

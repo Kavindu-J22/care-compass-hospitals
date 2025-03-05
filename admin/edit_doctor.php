@@ -69,34 +69,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Doctor - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Edit Doctor & Staff - Care Compass Hospitals</title>
+    <link rel="stylesheet" href="../assets/css/editStaff.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="edit-doctor">
-        <h1>Edit Doctor</h1>
+
+    <!-- Edit Doctor & Staff Hero Section -->
+    <section class="edit-doctor-hero">
+        <div class="edit-doctor-hero-content">
+            <h1>Edit Doctor & Staff</h1>
+            <p>Update the details of doctors and staff members to ensure accurate and up-to-date information.</p>
+        </div>
+    </section>
+
+    <!-- Edit Doctor & Staff Form Section -->
+    <section class="edit-doctor-form">
+        <h2>Edit Details</h2>
+        <p>Update the information for the selected doctor or staff member.</p>
+
+        <?php if (isset($error)) { echo "<p class='error'>$error</p>"; } ?>
+        <?php if (isset($success)) { echo "<p class='success'>$success</p>"; } ?>
+
         <form method="POST" action="">
-            <div>
+            <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" value="<?php echo $doctor['name']; ?>" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="specialty">Specialty:</label>
                 <input type="text" name="specialty" id="specialty" value="<?php echo $doctor['specialty']; ?>" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="qualifications">Qualifications:</label>
                 <textarea name="qualifications" id="qualifications" required><?php echo $doctor['qualifications']; ?></textarea>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="contact_info">Contact Info:</label>
                 <input type="text" name="contact_info" id="contact_info" value="<?php echo $doctor['contact_info']; ?>" required>
             </div>
-            <button type="submit">Update Doctor</button>
+            <button type="submit" class="btn-primary">Update Doctor</button>
         </form>
-        <a href="manage_staff.php" class="btn">Back to Manage Doctors</a>
+        <a href="manage_staff.php" class="btn-secondary">Back to Manage Doctors</a>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
 </body>
 </html>

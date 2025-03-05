@@ -42,31 +42,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Service - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/addServices.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="add-service">
-        <h1>Add New Service</h1>
+
+
+    <!-- Add Service Hero Section -->
+    <section class="add-service-hero">
+        <div class="add-service-hero-content">
+            <h1>Add New Service</h1>
+            <p>Expand the range of healthcare services offered by Care Compass Hospitals. Add new services to meet the needs of our patients.</p>
+        </div>
+    </section>
+
+    <!-- Add Service Form Section -->
+    <section class="add-service-form">
+        <h2>Service Details</h2>
+        <p>Fill out the form below to add a new service.</p>
 
         <?php if (isset($error)) { echo "<p class='error'>$error</p>"; } ?>
         <?php if (isset($success)) { echo "<p class='success'>$success</p>"; } ?>
 
         <form method="POST" action="">
-            <label for="name">Service Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="description">Description:</label>
-            <textarea id="description" name="description"></textarea>
-
-            <label for="cost">Cost (LKR):</label>
-            <input type="text" id="cost" name="cost" required>
-
-            <button type="submit">Add Service</button>
+            <div class="form-group">
+                <label for="name">Service Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="cost">Cost (LKR):</label>
+                <input type="text" id="cost" name="cost" required>
+            </div>
+            <button type="submit" class="btn-primary">Add Service</button>
         </form>
-
-        <a href="manage_services.php" class="btn">Back to Services</a>
+        <a href="manage_services.php" class="btn-secondary">Back to Services</a>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
 </body>
 </html>

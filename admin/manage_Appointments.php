@@ -30,70 +30,59 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Appointments</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        th {
-            background-color: #007BFF;
-            color: white;
-        }
-        .btn {
-            padding: 8px 12px;
-            text-decoration: none;
-            color: white;
-            border-radius: 5px;
-        }
-        .update-btn { background-color: #28a745; }
-        .update-btn:hover { background-color: #218838; }
-    </style>
+    <title>Manage Appointments - Care Compass Hospitals</title>
+    <link rel="stylesheet" href="../assets/css/manageApoinment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="dashboard">
-        <h1>Manage Appointments</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Appointment No.</th>
-                    <th>Patient Name</th>
-                    <th>Doctor Name</th>
-                    <th>Service</th>
-                    <th>Appointment Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if (!empty($appointments)) { ?>
-                    <?php foreach ($appointments as $appointment) { ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($appointment['appointment_number']); ?></td>
-                            <td><?php echo htmlspecialchars($appointment['patient_name']); ?></td>
-                            <td><?php echo htmlspecialchars($appointment['doctor_name']); ?></td>
-                            <td><?php echo htmlspecialchars($appointment['service_name']); ?></td>
-                            <td><?php echo htmlspecialchars($appointment['appointment_date']); ?></td>
-                            <td><?php echo ucfirst($appointment['status']); ?></td>
-                            <td>
-                                <a href="Update_Apoinment.php?id=<?php echo $appointment['id']; ?>" class="btn update-btn">Update & Get Action</a>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                <?php } else { ?>
-                    <tr><td colspan="7">No appointments found.</td></tr>
-                <?php } ?>
-            </tbody>
-        </table>
+
+    <!-- Manage Appointments Hero Section -->
+    <section class="manage-appointments-hero">
+        <div class="manage-appointments-hero-content">
+            <h1>Manage Appointments</h1>
+            <p>Efficiently manage patient appointments to ensure smooth operations and excellent patient care.</p>
+        </div>
     </section>
+
+    <!-- Manage Appointments Table Section -->
+    <section class="manage-appointments-table">
+        <h2>Appointment List</h2>
+        <p>Below is a list of all appointments. You can update or take action on each appointment as needed.</p>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Appointment No.</th>
+                        <th>Patient Name</th>
+                        <th>Doctor Name</th>
+                        <th>Service</th>
+                        <th>Appointment Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (!empty($appointments)) { ?>
+                        <?php foreach ($appointments as $appointment) { ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($appointment['appointment_number']); ?></td>
+                                <td><?php echo htmlspecialchars($appointment['patient_name']); ?></td>
+                                <td><?php echo htmlspecialchars($appointment['doctor_name']); ?></td>
+                                <td><?php echo htmlspecialchars($appointment['service_name']); ?></td>
+                                <td><?php echo htmlspecialchars($appointment['appointment_date']); ?></td>
+                                <td><span class="status-<?php echo strtolower($appointment['status']); ?>"><?php echo ucfirst($appointment['status']); ?></span></td>
+                                <td class="actions">
+                                    <a href="Update_Apoinment.php?id=<?php echo $appointment['id']; ?>" class="btn-update">Update & Get Action</a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    <?php } else { ?>
+                        <tr><td colspan="7">No appointments found.</td></tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
 </body>
 </html>
-
-<?php include '../includes/footer.php'; ?>

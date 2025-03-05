@@ -1,0 +1,102 @@
+/* Delete Service Hero Section */
+.delete-service-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+}
+
+.delete-service-hero-content {
+    max-width: 50%;
+}
+
+.delete-service-hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.delete-service-hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #eee;
+}
+
+.delete-service-hero-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Delete Confirmation Section */
+.delete-confirmation {
+    padding: 80px 40px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.delete-confirmation h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.delete-confirmation p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    color: #666;
+}
+
+.delete-confirmation form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-delete {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid #6a11cb;
+    color: #6a11cb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: #6a11cb;
+    color: #fff;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.success {
+    color: #28a745;
+    font-size: 16px;
+    margin-bottom: 20px;
+}

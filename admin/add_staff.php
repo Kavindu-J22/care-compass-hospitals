@@ -52,45 +52,71 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Staff - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/addStaff.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="add-staff">
-        <h1>Add Staff Member</h1>
+
+    <!-- Add Staff Hero Section -->
+    <section class="add-staff-hero">
+        <div class="add-staff-hero-content">
+            <h1>Add New Staff Member</h1>
+            <p>Welcome to the staff management portal. Add new doctors, nurses, lab assistants, and other healthcare professionals to the Care Compass Hospitals team.</p>
+        </div>
+    </section>
+
+    <!-- Add Staff Form Section -->
+    <section class="add-staff-form">
+        <h2>Staff Details</h2>
+        <p>Fill out the form below to add a new staff member.</p>
         <form method="POST" action="">
-            <h2>User Details</h2>
-            <div>
+            <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" name="username" id="username" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password" required>
             </div>
-
-            <h2>Doctor Details</h2>
-            <div>
-                <label for="name">Name:</label>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
                 <input type="text" name="name" id="name" required>
             </div>
-            <div>
-                <label for="specialty">Specialty:</label>
-                <input type="text" name="specialty" id="specialty" required>
-            </div>
-            <div>
+            <div class="form-group">
+            <label for="specialty">Specialty or Occupation:</label>
+            <select name="specialty" id="specialty" required>
+                <option value=""> Select From List </option>
+                <option value="doctor">Doctor</option>
+                <option value="nurse">Nurse</option>
+                <option value="lab_assistant">Lab Assistant</option>
+                <option value="pharmacist">Pharmacist</option>
+                <option value="receptionist">Receptionist</option>
+                <option value="admin">Admin</option>
+                <option value="surgeon">Surgeon</option>
+                <option value="therapist">Therapist</option>
+                <option value="radiologist">Radiologist</option>
+                <option value="dentist">Dentist</option>
+                <option value="cardiologist">Cardiologist</option>
+                <option value="pediatrician">Pediatrician</option>
+                <option value="gynecologist">Gynecologist</option>
+                <option value="orthopedic">Orthopedic</option>
+                <option value="neurologist">Neurologist</option>
+                <option value="psychiatrist">Psychiatrist</option>
+                <option value="anesthesiologist">Anesthesiologist</option>
+            </select>
+        </div>
+            <div class="form-group">
                 <label for="qualifications">Qualifications:</label>
                 <textarea name="qualifications" id="qualifications" required></textarea>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="contact_info">Contact Info:</label>
                 <input type="text" name="contact_info" id="contact_info" required>
             </div>
-
-            <button type="submit">Add Staff</button>
+            <button type="submit" class="btn-primary">Add to Staff</button>
         </form>
-        <a href="manage_staff.php" class="btn">Back to Manage Staff</a>
+        <a href="manage_staff.php" class="btn-secondary">Back to Manage Staff</a>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
 </body>
 </html>

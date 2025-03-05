@@ -22,43 +22,57 @@ $queries = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Queries - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/manageQuery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="manage-queries">
-        <h1>Manage Queries</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Patient Name</th>
-                    <th>Query</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if (!empty($queries)) { // Check if there are results
-                    foreach ($queries as $row) {
-                        echo "<tr>
-                                <td>{$row['id']}</td>
-                                <td>{$row['full_name']}</td>
-                                <td>{$row['query']}</td>
-                                <td>{$row['status']}</td>
-                                <td>
-                                    <a href='resolve_query.php?id={$row['id']}'>Resolve Or Reply</a>
-                                </td>
-                              </tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='5'>No queries found.</td></tr>";
-                }
-                ?>
-            </tbody>
-        </table>
+
+
+    <!-- Manage Queries Hero Section -->
+    <section class="manage-queries-hero">
+        <div class="manage-queries-hero-content">
+            <h1>Manage Queries</h1>
+            <p>View and respond to patient queries efficiently. Ensure timely and accurate responses to improve patient satisfaction.</p>
+        </div>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
+    <!-- Manage Queries Table Section -->
+    <section class="manage-queries-table">
+        <h2>Patient Queries</h2>
+        <p>Below is a list of all patient queries. You can resolve or reply to each query.</p>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Patient Name</th>
+                        <th>Query</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if (!empty($queries)) {
+                        foreach ($queries as $row) {
+                            echo "<tr>
+                                    <td>{$row['id']}</td>
+                                    <td>{$row['full_name']}</td>
+                                    <td>{$row['query']}</td>
+                                    <td><span class='status-{$row['status']}'>{$row['status']}</span></td>
+                                    <td class='actions'>
+                                        <a href='resolve_query.php?id={$row['id']}' class='btn-resolve'>Resolve / Reply</a>
+                                    </td>
+                                  </tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='5'>No queries found.</td></tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
 </body>
 </html>
