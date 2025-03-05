@@ -33,21 +33,51 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Dashboard - Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/staffDashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="staff-dashboard">
-        <h1>Welcome, <?php echo $staff['username']; ?></h1>
-        <nav>
-            <ul>
-                <li><a href="view_appointments.php">View Appointments</a></li>
-                <li><a href="view_services.php">View services</a></li>
-                <li><a href="view_queries.php">View Queries</a></li>
-                <li><a href="../logout.php">Logout</a></li>
-            </ul>
-        </nav>
+
+    <!-- Staff Dashboard Hero Section -->
+    <section class="staff-dashboard-hero">
+        <div class="staff-dashboard-hero-content">
+            <h1>Welcome, <?php echo $staff['username']; ?></h1>
+            <p>Manage your tasks and access important information from your dashboard.</p>
+        </div>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
+    <!-- Staff Dashboard Navigation Section -->
+    <section class="staff-dashboard-navigation">
+        <h2>Quick Links</h2>
+        <p>Access the tools and information you need to perform your duties efficiently.</p>
+        <div class="navigation-grid">
+        <a href="../index.php" class="navigation-card">
+                <img src="../assets/images/Logo.png" alt="View Appointments">
+                <h3>Home</h3>
+                <p>Check and manage patient appointments.</p>
+            </a>
+            <a href="view_appointments.php" class="navigation-card">
+                <img src="../assets/images/appointments-icon.png" alt="View Appointments">
+                <h3>View Appointments</h3>
+                <p>Check and manage patient appointments.</p>
+            </a>
+            <a href="view_services.php" class="navigation-card">
+                <img src="../assets/images/services-iocn.png" alt="View Services">
+                <h3>View Services</h3>
+                <p>Explore the services offered by the hospital.</p>
+            </a>
+            <a href="view_queries.php" class="navigation-card">
+                <img src="../assets/images/queries-icon.png" alt="View Queries">
+                <h3>View Queries</h3>
+                <p>Respond to patient queries and concerns.</p>
+            </a>
+            <a href="../logout.php" class="navigation-card">
+                <img src="../assets/images/logout-icon.png" alt="Logout">
+                <h3>Logout</h3>
+                <p>Log out of your account securely.</p>
+            </a>
+        </div>
+    </section>
+
 </body>
 </html>

@@ -1,0 +1,86 @@
+/* Manage Services Section */
+.manage-services {
+    padding: 20px;
+}
+
+.manage-services .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.manage-services h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #0073e6;
+}
+
+.manage-services p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #0073e6;
+    color: #fff;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn {
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn.edit {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn.delete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn.add {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.add-service {
+    text-align: right;
+    margin-top: 20px;
+}
